@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>System Logs</h2>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Time</th>
+        <th>User</th>
+        <th>Action</th>
+    </tr>
+    {% for row in logs %}
+    <tr>
+        <td>{{ row.Time }}</td>
+        <td>{{ row.User }}</td>
+        <td>{{ row.Action }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

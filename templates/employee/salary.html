@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Salary Details</h2>
+
+<p><strong>Basic Salary:</strong> {{ salary.basic }}</p>
+<p><strong>HRA:</strong> {{ salary.hra }}</p>
+<p><strong>PF Deduction:</strong> {{ salary.pf }}</p>
+<p><strong>Net Salary:</strong> {{ salary.net }}</p>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    .resume-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+    .resume-header {
+        text-align: center;
+        border-bottom: 2px solid #111111;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .resume-header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+    .resume-header h3 {
+        margin: 5px 0;
+        font-weight: normal;
+        color: #555;
+    }
+    .resume-section {
+        margin-bottom: 20px;
+    }
+    .resume-section h2 {
+        color: #111111;
+        border-bottom: 1px solid #111111;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .resume-section p {
+        margin: 5px 0;
+    }
+</style>
+
+<div class="resume-container">
+    <div class="resume-header">
+        <h1>{{ profile.EmployeeName }}</h1>
+        <h3>{{ profile.JobRole }} | {{ profile.Department }}</h3>
+        <h4>Email: employee{{ profile.EmployeeNumber }}@company.com</h4>
+    </div>
+
+    <div class="resume-section">
+        <h2>Personal Information</h2>
+        <p><strong>Employee Number:</strong> {{ profile.EmployeeNumber }}</p>
+        <p><strong>Age:</strong> {{ profile.Age }}</p>
+        <p><strong>Gender:</strong> {{ profile.Gender }}</p>
+        <p><strong>Marital Status:</strong> {{ profile.MaritalStatus }}</p>
+        <p><strong>Business Travel:</strong> {{ profile.BusinessTravel }}</p>
+        <p><strong>Distance From Home:</strong> {{ profile.DistanceFromHome }} km</p>
+    </div>
+
+    <div class="resume-section">
+        <h2>Work & Performance</h2>
+        <p><strong>Department:</strong> {{ profile.Department }}</p>
+        <p><strong>Job Role:</strong> {{ profile.JobRole }}</p>
+        <p><strong>Job Level:</strong> {{ profile.JobLevel }}</p>
+        <p><strong>Years at Company:</strong> {{ profile.YearsAtCompany }}</p>
+        <p><strong>Years in Current Role:</strong> {{ profile.YearsInCurrentRole }}</p>
+        <p><strong>Years Since Last Promotion:</strong> {{ profile.YearsSinceLastPromotion }}</p>
+        <p><strong>Years With Current Manager:</strong> {{ profile.YearsWithCurrManager }}</p>
+        <p><strong>OverTime:</strong> {{ profile.OverTime }}</p>
+        <p><strong>Attrition:</strong> {{ profile.Attrition }}</p>
+    </div>
+
+    <div class="resume-section">
+        <h2>Compensation & Benefits</h2>
+        <p><strong>Monthly Income:</strong> ${{ profile.MonthlyIncome }}</p>
+        <p><strong>Percent Salary Hike:</strong> {{ profile.PercentSalaryHike }}%</p>
+        <p><strong>Stock Option Level:</strong> {{ profile.StockOptionLevel }}</p>
+        <p><strong>Performance Rating:</strong> {{ profile.PerformanceRating }}</p>
+    </div>
+
+    <div class="resume-section">
+        <h2>Education & Skills</h2>
+        <p><strong>Education Level:</strong> {{ profile.Education }}</p>
+        <p><strong>Education Field:</strong> {{ profile.EducationField }}</p>
+        <p><strong>Training Times Last Year:</strong> {{ profile.TrainingTimesLastYear }}</p>
+        <p><strong>Work-Life Balance:</strong> {{ profile.WorkLifeBalance }}</p>
+        <p><strong>Job Satisfaction:</strong> {{ profile.JobSatisfaction }}</p>
+        <p><strong>Environment Satisfaction:</strong> {{ profile.EnvironmentSatisfaction }}</p>
+        <p><strong>Relationship Satisfaction:</strong> {{ profile.RelationshipSatisfaction }}</p>
+        <p><strong>Job Involvement:</strong> {{ profile.JobInvolvement }}</p>
+    </div>
+</div>
+{% endblock %}

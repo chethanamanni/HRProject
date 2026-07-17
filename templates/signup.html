@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        body {display:flex;justify-content:center;align-items:center;height:100vh;background:#f0f0f0;font-family:Arial,sans-serif;}
+        form {background:#fff;padding:30px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+    </style>
+</head>
+<body>
+<form method="POST">
+    <h2>Signup</h2>
+    {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+    <label>Username:</label>
+    <input type="text" name="username" required><br><br>
+    <label>Password:</label>
+    <input type="password" name="password" required><br><br>
+    <label>Role:</label>
+    <select name="role">
+        <option value="employee">Employee</option>
+        <option value="hr">HR</option>
+    </select><br><br>
+    <input type="submit" value="Signup">
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</form>
+</body>
+</html>

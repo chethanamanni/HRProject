@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Leave History</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Status</th>
+    </tr>
+
+    {% for leave in leaves %}
+    <tr>
+        <td>{{ leave.Date }}</td>
+        <td>{{ leave.LeaveType }}</td>
+        <td>{{ leave.Status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Employee Attendance</h2>
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Employee Number</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+    {% for row in attendance %}
+    <tr>
+        <td>{{ row.EmployeeNumber }}</td>
+        <td>{{ row.Name }}</td>
+        <td>{{ row.Date }}</td>
+        <td>{{ row.Status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

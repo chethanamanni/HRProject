@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>HR Dashboard</h2>
+
+<div style="display:flex; gap:30px; margin-bottom:30px;">
+    <div>Total Employees: {{ total_employees }}</div>
+    <div>Attrition Count: {{ attrition_count }}</div>
+    <div>Attrition Rate: {{ attrition_rate }}%</div>
+    <div>Average Salary: {{ avg_salary }}</div>
+    <div>Overtime %: {{ overtime_pct }}%</div>
+</div>
+
+<h3>Employee Trend Over Months</h3>
+<canvas id="lineChart" width="800" height="400"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('lineChart').getContext('2d');
+const lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ months | safe }},
+        datasets: [{
+            label: 'Number of Employees',
+            data: {{ emp_counts | safe }},
+            fill: false,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            tension: 0.3,
+            pointBackgroundColor: 'rgba(0, 123, 255, 1)',
+            pointRadius: 5,
+            pointHoverRadius: 7
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: true, position: 'top' },
+            title: { display: true, text: 'Employee Growth / Trend', font: {size:18} }
+        },
+        scales: {
+            y: { beginAtZero: false, title: { display:true, text:'Number of Employees' } },
+            x: { title: { display:true, text:'Months' } }
+        }
+    }
+});
+</script>
+
+{% endblock %}

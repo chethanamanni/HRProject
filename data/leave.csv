@@ -1,0 +1,7 @@
+EmployeeNumber,Date,LeaveType,Status
+1,2025-01-05,Sick Leave,Approved
+1,2025-01-15,Casual Leave,Pending
+1,2025-01-20,Casual Leave,Approved
+2,2025-01-10,Sick Leave,Approved
+2,2025-01-22,Annual Leave,Pending
+2,2025-01-28,Casual Leave,Approved

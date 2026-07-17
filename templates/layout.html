@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR Portal</title>
+    <style>
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #EFEFEF;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #111111;
+            color: #fff;
+            text-align: left;
+        }
+
+        h2 {
+            color: #111111;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    {% if session.role == 'hr' %}
+        <a href="{{ url_for('hr_dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('hr_employee') }}">Employees</a>
+        <a href="{{ url_for('hr_attendance') }}">Attendance</a>
+        <a href="{{ url_for('hr_report') }}">Reports</a>
+        <a href="{{ url_for('hr_logs') }}">Logs</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% elif session.role == 'employee' %}
+        <a href="{{ url_for('emp_dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('emp_profile') }}">Profile</a>
+        <a href="{{ url_for('emp_attendance') }}">Attendance</a>
+        <a href="{{ url_for('emp_leave') }}">Leave</a>
+        <a href="{{ url_for('emp_salary') }}">Salary</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+    {% endif %}
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

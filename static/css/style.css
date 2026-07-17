@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #EFEFEF;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #111111;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}

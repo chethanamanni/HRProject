@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Welcome {{ emp['EmployeeNumber'] }} - {{ emp['JobRole'] }}</h2>
+<p>Name: {{ emp['EmployeeNumber'] }}</p>
+<p>Department: {{ emp['Department'] }}</p>
+<p>Monthly Income: {{ emp['MonthlyIncome'] }}</p>
+<p>Attrition: {{ emp['Attrition'] }}</p>
+{% endblock %}

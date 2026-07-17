@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Employee Details</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Job Role</th>
+        <th>Age</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.EmployeeNumber }}</td>
+        <td>{{ emp.EmployeeCount }}</td>
+        <td>{{ emp.Department }}</td>
+        <td>{{ emp.JobRole }}</td>
+        <td>{{ emp.Age }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
